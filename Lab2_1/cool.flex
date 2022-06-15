@@ -233,7 +233,7 @@ WHITESPACE     (" "|\f|\r|\t|\v)
 }
 
 <STR_SKIP>[\n|"] {BEGIN 0;}
-<STR_SKIP>[^\n|"] { }
+<STR_SKIP>[^\n|"] { curr_lineno++; }
 
 "*)" {
     yylval.error_msg="Unmatched *)";
